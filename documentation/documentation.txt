@@ -1,4 +1,3 @@
-
 # Technical Documentation: LLM Security Guardrail & Shield Microservice
 
 ## 1. System Overview
