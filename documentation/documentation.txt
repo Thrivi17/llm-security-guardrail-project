@@ -1,12 +1,12 @@
 # Technical Documentation: LLM Security Guardrail & Shield Microservice
 
 ## 1. System Overview
-The LLM Security Guardrail & Shield Project is a dual-layered security microservice and interactive web application. It is engineered to intercept, analyze, and neutralize adversarial prompts, data exfiltration attempts, and jailbreaks before they reach downstream Large Language Models. The architecture bridges a high-performance FastAPI backend with a dynamic Streamlit frontend interface.
+The LLM Security Guardrail & Shield Project is a dual-layered security microservice and interactive web application. It is engineered to intercept, analyze, and neutralize adversarial prompts, data exfiltration attempts, and jailbreaks before they reach downstream Large Language Models. The architecture bridges a high-performance FastAPI backend with a dynamic Streamlit frontend interface[cite: 3].
 
 ---
 
 ## 2. Core Security Engine (main.py)
-The detection mechanism operates via a hybrid model combining deterministic pattern matching with probabilistic semantic distance evaluation:
+The detection mechanism operates via a hybrid model combining deterministic pattern matching with probabilistic semantic distance evaluation[cite: 3]:
 
 * Regex Heuristic Analysis: Scans incoming payloads against rules mapped directly to the OWASP Top 10 for LLM Applications[cite: 3]:
   * LLM01: Prompt Injection (e.g., instructions to ignore prior constraints or enter developer mode)[cite: 3].
@@ -17,7 +17,7 @@ The detection mechanism operates via a hybrid model combining deterministic patt
 ---
 
 ## 3. API Specification & Interceptor
-The application exposes a programmatic REST endpoint through FastAPI:
+The application exposes a programmatic REST endpoint through FastAPI[cite: 3]:
 
 * Endpoint: POST /v1/guardrail/scan
 * Request Schema:
