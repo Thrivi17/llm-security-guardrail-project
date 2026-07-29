@@ -2,7 +2,7 @@
 
 An enterprise-grade, multi-layered security microservice and interactive web application designed to detect, intercept, and mitigate vulnerabilities mapped to the **OWASP Top 10 for LLM Applications** and semantic jailbreak vectors.
 
-🌐 **Live Demo:** [View Live Streamlit App](https://your-app-name.streamlit.app)
+🌐 **Live Demo:** [View Live Streamlit App](https://llm-security-guardrail-project-vikriosappiwjetqygfxart.streamlit.app/)
 
 ---
 
