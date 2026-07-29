@@ -1,23 +1,23 @@
 # Technical Documentation: LLM Security Guardrail & Shield Microservice
 
 ## 1. System Overview
-The LLM Security Guardrail & Shield Project is a dual-layered security microservice and interactive web application. It is engineered to intercept, analyze, and neutralize adversarial prompts, data exfiltration attempts, and jailbreaks before they reach downstream Large Language Models. The architecture bridges a high-performance FastAPI backend with a dynamic Streamlit frontend interface[cite: 3].
+The LLM Security Guardrail & Shield Project is a dual-layered security microservice and interactive web application. It is engineered to intercept, analyze, and neutralize adversarial prompts, data exfiltration attempts, and jailbreaks before they reach downstream Large Language Models. The architecture bridges a high-performance FastAPI backend with a dynamic Streamlit frontend interface.
 
 ---
 
 ## 2. Core Security Engine (main.py)
-The detection mechanism operates via a hybrid model combining deterministic pattern matching with probabilistic semantic distance evaluation[cite: 3]:
+The detection mechanism operates via a hybrid model combining deterministic pattern matching with probabilistic semantic distance evaluation:
 
-* Regex Heuristic Analysis: Scans incoming payloads against rules mapped directly to the OWASP Top 10 for LLM Applications[cite: 3]:
-  * LLM01: Prompt Injection (e.g., instructions to ignore prior constraints or enter developer mode)[cite: 3].
-  * LLM02: Sensitive Data Disclosure (e.g., matching exposed API keys, bearer tokens, and static passwords)[cite: 3].
-  * LLM06: Excessive Agency / Jailbreaks (e.g., attempts to trigger shell execution or bypass safety filters)[cite: 3].
-* Semantic Vector Distance Matching: Utilizes the lightweight sentence-transformers architecture (all-MiniLM-L6-v2) to encode prompt inputs into dense vector embeddings[cite: 3]. It calculates cosine similarity against a curated list of anchor jailbreaks to flag semantic evasions that bypass strict regex signatures[cite: 3].
+* Regex Heuristic Analysis: Scans incoming payloads against rules mapped directly to the OWASP Top 10 for LLM Applications:
+  * LLM01: Prompt Injection (e.g., instructions to ignore prior constraints or enter developer mode).
+  * LLM02: Sensitive Data Disclosure (e.g., matching exposed API keys, bearer tokens, and static passwords).
+  * LLM06: Excessive Agency / Jailbreaks (e.g., attempts to trigger shell execution or bypass safety filters).
+* Semantic Vector Distance Matching: Utilizes the lightweight sentence-transformers architecture (all-MiniLM-L6-v2) to encode prompt inputs into dense vector embeddings. It calculates cosine similarity against a curated list of anchor jailbreaks to flag semantic evasions that bypass strict regex signatures.
 
 ---
 
 ## 3. API Specification & Interceptor
-The application exposes a programmatic REST endpoint through FastAPI[cite: 3]:
+The application exposes a programmatic REST endpoint through FastAPI:
 
 * Endpoint: POST /v1/guardrail/scan
 * Request Schema:
