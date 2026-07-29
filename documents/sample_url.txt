@@ -1,1 +1,2 @@
-
+## 📊 Sample Security Audit Output
+You can view a sample of the generated batch scan evaluation report [here](./reports/security_dashboard.html).
