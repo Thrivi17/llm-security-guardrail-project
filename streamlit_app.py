@@ -1,11 +1,8 @@
 import streamlit as st
 from fastapi.testclient import TestClient
 
-# Import your FastAPI app instance
-try:
-    from app import app
-except ImportError:
-    from main import app
+# Import your FastAPI app directly from main.py
+from main import app
 
 client = TestClient(app)
 
@@ -27,4 +24,4 @@ if st.button("Scan Prompt", type="primary"):
         else:
             st.error(f"Error {response.status_code}: {response.text}")
     else:
-      st.warning("Please enter a prompt first.")
+        st.warning("Please enter a prompt first.")
