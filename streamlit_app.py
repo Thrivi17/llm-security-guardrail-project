@@ -11,7 +11,7 @@ st.set_page_config(page_title="LLM Shield Guardrail", page_icon="🛡️", layou
 st.title("🛡️ LLM Shield Security Guardrail")
 st.write("Test your prompt injection defenses and security guardrail microservice in real time.")
 
-prompt_text = st.text_area("Enter Prompt to Scan", placeholder="Type a prompt to test for injections...")
+prompt_text = st.text_area("Enter Prompt to Scan", placeholder="Type a prompt to test for injections")
 
 if st.button("Scan Prompt", type="primary"):
     if prompt_text.strip():
